@@ -1,8 +1,28 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronUp, Download, Mail, Phone, MapPin, Linkedin, Github, ExternalLink, CheckCircle, Award, Briefcase, GraduationCap, Code, Database, TrendingUp, Users, Target, Globe, ChevronDown } from 'lucide-react';
-
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const form = useRef();
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    'service_1h1h38t',
+    'template_bb9ujh8',
+    form.current,
+    'CedxBirx9CS9z9mlc'
+  )
+  .then(() => {
+    alert("Message sent successfully!");
+    form.current.reset();
+  })
+  .catch(() => {
+    alert("Failed to send message");
+  });
+};
   const [activeSection, setActiveSection] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSkillTab, setActiveSkillTab] = useState('technical');
@@ -1066,70 +1086,81 @@ function App() {
             </div>
 
             <div className="fade-in-section">
-              <form className="bg-white rounded-xl p-8 shadow-xl">
-                <div className="mb-6">
-                  <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A3D] focus:border-transparent text-gray-900"
-                    placeholder="Your Name"
-                  />
-                </div>
+  <form ref={form} onSubmit={sendEmail} className="bg-white rounded-xl p-8 shadow-xl">
 
-                <div className="mb-6">
-                  <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A3D] focus:border-transparent text-gray-900"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
+    {/* Name */}
+    <div className="mb-6">
+      <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+        Name *
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="user_name"
+        required
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A3D] focus:border-transparent text-gray-900"
+        placeholder="Your Name"
+      />
+    </div>
 
-                <div className="mb-6">
-                  <label htmlFor="subject" className="block text-gray-700 font-semibold mb-2">
-                    Subject *
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A3D] focus:border-transparent text-gray-900"
-                    placeholder="What's this about?"
-                  />
-                </div>
+    {/* Email */}
+    <div className="mb-6">
+      <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+        Email *
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="user_email"
+        required
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A3D] focus:border-transparent text-gray-900"
+        placeholder="your.email@example.com"
+      />
+    </div>
 
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A3D] focus:border-transparent text-gray-900"
-                    placeholder="Your message..."
-                  ></textarea>
-                </div>
+    {/* Subject */}
+    <div className="mb-6">
+      <label htmlFor="subject" className="block text-gray-700 font-semibold mb-2">
+        Subject *
+      </label>
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        required
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A3D] focus:border-transparent text-gray-900"
+        placeholder="What's this about?"
+      />
+    </div>
 
-                <button
-                  type="submit"
-                  className="w-full px-6 py-4 bg-gradient-to-r from-[#2D5A3D] to-[#2563EB] text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Message */}
+    <div className="mb-6">
+      <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
+        Message *
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        required
+        rows={5}
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A3D] focus:border-transparent text-gray-900"
+        placeholder="Your message..."
+      ></textarea>
+    </div>
+
+    {/* Button */}
+    <button
+      type="submit"
+      className="w-full px-6 py-4 bg-gradient-to-r from-[#2D5A3D] to-[#2563EB] text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+    >
+      Send Message
+    </button>
+
+ </form>
+</div>   {/* right column */}
+</div>   {/* grid */}
+</div>   {/* container */}
+</section>
 
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

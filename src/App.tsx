@@ -142,9 +142,9 @@ function App() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Transforming Data into {' '}
+                Focused on {' '}
                 <span className="bg-gradient-to-r from-[#2D5A3D] to-[#2563EB] bg-clip-text text-transparent">
-                  Strategic Insights to Drive Business Growth and Client Success
+                  Learning, Solving, and Driving Business Growth
                 </span>
               </h1>
 
@@ -160,6 +160,7 @@ function App() {
                   ambiguous challenges with data-driven problem-solving approach an essential skill in today’s rapidly evolving business landscape
                   thinking the critical skill today's rapidly
                   evolving business landscape demands.
+                  Excellent communication and negotiation skills, with the ability to manage stakeholders and drive consensus in complex environments.
                 </p>
               </div>
 
@@ -504,7 +505,7 @@ function App() {
             'Developed exposure to international research environments and laboratory practices'
           ],
           tags: ['Research', 'Laboratory', 'International', 'Analytics'],
-          image: '/images/Inayath_Ebehard_Karls_University.jpg'
+          image: 'images/Inayath_Ebehard_Karls_University.jpg'
         },
         {
           title: 'Post Harvest and Packaging Management Intern',
@@ -631,7 +632,7 @@ function App() {
               {
                 title: 'AI-Based Recipe Generator (Cook Help)',
                 category: 'AI, Food Tech',
-                link: 'https://mhinu.github.io/recipe-generator',
+                link: 'https://mhinu.github.io/reciepe-generator',
                 tags: ['AI', 'Food Industry', 'Live'],
                 description: 'Built a dynamic recipe generation web application using AI tools to help food enthusiasts and working professionals.',
                 features: [
@@ -908,7 +909,7 @@ function App() {
           title: 'Code2Cognition - AI and Data Science Bootcamp',
           org: 'Redseer Foundation & SIRPI | KVAFSU',
           date: 'May 7 - September 11, 2025',
-          image: '/images/Code2Cognition_Certificate.jpeg',
+          image: `${import.meta.env.BASE_URL}images/Code2Cognition_Certificate.jpeg`,
           tags: ['AI', 'ML', 'Data Science']
         },
         {
@@ -916,7 +917,7 @@ function App() {
           org: 'Knowledge Accelerators via Coursera',
           date: 'December 11, 2024',
           verify: 'https://coursera.org/verify/E0DW75DKYMFZ',
-          image: '/images/from_excel_to_power_BI_Cerificate.jpeg',
+          image: `${import.meta.env.BASE_URL}images/from_excel_to_power_BI_Cerificate.jpeg`,
           tags: ['Power BI', 'Data Visualization']
         },
         {
@@ -924,7 +925,7 @@ function App() {
           org: 'Stanford University via Coursera',
           date: 'March 17, 2025',
           verify: 'https://coursera.org/verify/T52PE9RFYJ2S',
-          image: '/images/Introduction_to_Statistics_Certificate.jpeg',
+          image: `${import.meta.env.BASE_URL}images/Introduction_to_Statistics_Certificate.jpeg`,
           tags: ['Statistics', 'Data Science']
         },
         {
@@ -932,7 +933,7 @@ function App() {
           org: 'Coursera',
           date: 'April 23, 2025',
           verify: 'https://coursera.org/verify/2RJ0P4K98Q09T',
-          image: '/images/Getting_Started_with_Excel_Certificate.jpeg',
+          image: `${import.meta.env.BASE_URL}images/Getting_Started_with_Excel_Certificate.jpeg`,
           tags: ['Excel', 'Data Analysis']
         }
       ].map((cert, index) => (
